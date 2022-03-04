@@ -16,7 +16,7 @@
     </header>
     <?php
     if(isset($_SESSION[KEY_ERRORS])){
-        $errors=$_SESSION[KEY_ERRORS];
+        $tableauErrors=$_SESSION[KEY_ERRORS];
         // var_dump($_SESSION[KEY_ERRORS]);die;
         unset($_SESSION[KEY_ERRORS]);
     }
@@ -32,8 +32,8 @@
             <div class="corps">
                 <small>
                     <?php
-                        if (isset($errors["connexion"]))
-                            echo $errors["connexion"];
+                        if (isset($tableauErrors["errorConnexion"]))
+                            echo $tableauErrors["errorConnexion"];
                     ?>
                 </small>
                 <div class="champs">
@@ -42,8 +42,8 @@
                 </div>
                 <small>
                     <?php
-                        if (isset($errors["login"]))
-                            echo $errors["login"];
+                        if (isset($tableauErrors["errorLogin"]))
+                            echo $tableauErrors["errorLogin"];
                     ?>
                 </small>
 
@@ -55,8 +55,8 @@
                 </div>
                 <small>
                     <?php
-                        if (isset($errors["password"]))
-                            echo $errors["password"];
+                        if (isset($tableauErrors["errorPassword"]))
+                            echo $tableauErrors["errorPassword"];
                     ?>
                 </small>
 

@@ -7,6 +7,9 @@ if(isset($_REQUEST['controller']) ){
         case "user" :
             require_once(PATH_SRC."controllers/user.controllers.php");
         break;
+        default:
+            echo"error 404";
+        break;
     }
 }else{
     require_once(PATH_SRC."controllers/securite.controllers.php");

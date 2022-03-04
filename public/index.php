@@ -14,3 +14,5 @@ require_once dirname(dirname(__FILE__))."/config/orm.php";
 require_once dirname(dirname(__FILE__))."/config/role.php";
 //Chargement du router
 require_once dirname(dirname(__FILE__))."/config/router.php";
+// var_dump($_SERVER['REQUEST_METHOD']);die();
+//  var_dump(find_players("JOUEUR"));

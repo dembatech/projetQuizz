@@ -4,7 +4,27 @@
             "prenom": "Birane Baila ",
             "login": "joueur@gmail.com",
             "password": "joueur",
-            "role": "ROLE_JOUEUR",
+            "role": "JOUEUR",
+            "score": 15,
+            "avatar": ""
+        },
+
+        {
+            "nom": "Ndione",
+            "prenom": "Ndiasse",
+            "login": "ndiasse@gmail.com",
+            "password": "joueur",
+            "role": "JOUEUR",
+            "score": 15,
+            "avatar": ""
+        },
+
+        {
+            "nom": "Ndoye",
+            "prenom": "Mansour",
+            "login": "mansour@gmail.com",
+            "password": "joueur",
+            "role": "JOUEUR",
             "score": 15,
             "avatar": ""
         },
@@ -13,7 +33,7 @@
             "prenom": "Aissatou",
             "login": "admin@gmail.com",
             "password": "admin",
-            "role": "ROLE_ADMIN",
+            "role": "ADMIN",
             "score": 0,
             "avatar": ""
         }
