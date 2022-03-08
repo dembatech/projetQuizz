@@ -1,0 +1,370 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --color-vert: #052426;
+    --color-gris: #f0eef1;
+    --color-bleu: #51bfd0;
+}
+
+header {
+    display: flex;
+    color: white;
+    width: 100%;
+    background-color: var(--color-vert);
+    height: 10vh;
+    align-items: center;
+}
+
+header img {
+    width: 50px;
+    margin-left: 30px;
+}
+
+header h1 {
+    margin-left: 40%;
+}
+
+body {
+    display: flex;
+    background-image: linear-gradient(rgba(1, 24, 14, 0.527), rgba(1, 24, 14, 0.527)), url(../img/imge.jpg);
+    background-size: cover;
+    font-family: sans-serif;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 2%;
+    background-color: var(--color-gris);
+    width: 80%;
+    margin-left: 10%;
+    height: 80vh;
+}
+
+.head {
+    display: flex;
+    background-color: var(--color-bleu);
+    padding: 2em;
+    color: white;
+    font-size: 1.5em;
+}
+
+.head h1 {
+    width: 45%;
+    margin-left: 35%;
+    text-transform: uppercase;
+}
+
+.head a {
+    text-decoration: none;
+    text-align: center;
+    margin-left: 5%;
+    padding: 0.5em;
+    background-color: rgb(89, 217, 226);
+    border: none;
+    color: white;
+    border-radius: 3px;
+    width: 15%;
+    font-size: 1.2em;
+    box-shadow: 1px 1px 3px black;
+}
+
+.head a:hover {
+    background-color: var(--color-gris);
+    color: var(--color-bleu);
+}
+
+.body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.left,
+.right {
+    margin-top: 2%;
+    width: 45%;
+    background-color: white;
+    height: 55vh;
+}
+
+.left {
+    width: 35%;
+}
+
+.left_head {
+    background: linear-gradient(white, #51bfd0);
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+}
+
+.left_head img {
+    padding: 2%;
+    margin-left: 10%;
+    margin-right: 3%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+.left_body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+}
+
+.setting {
+    height: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.setting a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: grey;
+}
+
+.setting img {
+    width: 40px;
+    margin-right: 5%;
+}
+
+.setting small {
+    font-size: 1.3em;
+    margin-left: 5%;
+}
+
+.setting:hover {
+    border-left: 5px solid green;
+    background-color: white;
+}
+
+.setting:hover img[alt="plus"] {
+    content: url("../img/icones/ic-ajout-active.png");
+}
+
+.setting:hover img[alt="list"] {
+    content: url("../img/icones/ic-liste-active.png");
+}
+
+.right h1 {
+    text-align: center;
+    color: grey;
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 2% 0;
+}
+
+.listeplayers {
+    width: 80%;
+    margin-left: 10%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.listeplayers table {
+    padding: 1%;
+    color: grey;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border: 1px solid var(--color-bleu);
+    width: 100%;
+    height: 88%;
+    margin-top: 1%;
+}
+
+.listeplayers table th {
+    text-align: start;
+}
+
+.listeplayers a {
+    width: 20%;
+    align-self: end;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 5%;
+    padding: 0.5em;
+    background-color: rgb(89, 217, 226);
+    border: none;
+    color: white;
+    width: 10%;
+    font-size: 1.2em;
+}
+
+.listeplayers a:hover {
+    background-color: var(--color-gris);
+    color: var(--color-bleu);
+}
+
+.containerFormRegistration {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.containerFormRegistration h2 {
+    color: green;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.containerFormRegistration .the_avatar {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 30%;
+    height: 90%;
+}
+
+.containerFormRegistration .the_avatar img {
+    margin-left: 2%;
+    color: grey;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--color-bleu);
+}
+
+.containerFormRegistration form {
+    height: 100%;
+    width: 60%;
+    color: white;
+}
+
+.containerFormRegistration .loginForm {
+    background-color: white;
+    color: grey;
+    margin-bottom: 2%;
+    height: 8%;
+    border-bottom: 1px solid rgba(109, 107, 107, 0.7);
+}
+
+.containerFormRegistration h3 {
+    margin-left: 5%;
+    text-transform: uppercase;
+}
+
+.containerFormRegistration p {
+    margin-left: 5%;
+}
+
+.containerFormRegistration label {
+    display: block;
+}
+
+.containerFormRegistration input {
+    padding: 0.4em;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    width: 100%;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: inset 0 0 4px 4px var(--color-gris);
+}
+
+.containerFormRegistration input:hover {
+    border: 1px solid var(--color-bleu);
+    box-shadow: inset 0 0 2px 2px var(--color-bleu);
+}
+
+.containerFormRegistration small {
+    display: flex;
+    padding: 0.7% 0;
+    color: red;
+    width: 90%;
+    margin: auto;
+}
+
+.containerFormRegistration div {
+    color: grey;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.containerFormRegistration input[type="file"] {
+    display: none;
+}
+
+.containerFormRegistration .avatar {
+    width: 32%;
+    text-align: center;
+    background-color: var(--color-bleu);
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    padding: 0.6em;
+}
+
+.containerFormRegistration .avatar:hover {
+    background-color: transparent;
+    color: var(--color-bleu);
+    border: 1px solid var(--color-bleu);
+    cursor: pointer;
+}
+
+.containerFormRegistration .button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerFormRegistration .button:hover {
+    border: none;
+    box-shadow: none;
+}
+
+.containerFormRegistration .button input[type="submit"] {
+    box-shadow: none;
+    border: none;
+    margin-top: 1%;
+    width: 37%;
+    text-align: center;
+    margin-left: 30%;
+    background-color: var(--color-bleu);
+    color: white;
+    padding: 0.6em;
+}
+
+.containerFormRegistration .button input[type="submit"]:hover {
+    background-color: transparent;
+    color: var(--color-bleu);
+    border: 1px solid var(--color-bleu);
+    cursor: pointer;
+}
+
+.containerFormRegistration .button input[type="submit"]:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    border: none;
+    color: white;
+}
+
+.containerFormRegistration .button a {
+    margin-left: 5%;
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
+}
+
+.containerFormRegistration .button img {
+    margin-left: 2%;
+    color: grey;
+    width: 40px;
+}

@@ -1,65 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #04AA6D;
-}
-</style>
+<link rel="stylesheet" href='<?php echo WEB_ROOT."css".DIRECTORY_SEPARATOR."style2.css"?>'>
+<title>QUIZZ APP</title>
 </head>
 <body>
+    <header>
+        <img src="img/photo_2022-03-03_15-50-10.png" alt="">
+        <h1>Le plaisir de jouer</h1>
+    </header>
 
-<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <!-- Premiere methode -->
-  <?php if(is_admin()):?>
-  <!-- <li><a href="#">liste des joueurs</a></li> -->
-  <?php endif ?>
-  <!-- Deuxieme methode -->
-  <?php
-      if(is_admin())
-          echo '<li><a href="#">liste des joueurs</a></li>';
-  ?>
-  <li><a href= <?php echo WEB_ROOT."?controller=securite&action=deconnexion";?>>deconnexion</a></li>
-</ul>
-<?php 
+    <section class="container">
+      <section class="head">
+        <h1>Creer et parametrer vos quizz</h1> 
+        <a href= <?php echo WEB_ROOT."?controller=securite&action=deconnexion";?>>deconnexion</a>
+      </section>
 
-
-
-unset ($_SESSION[KEY_USER_CONNECT]);
-
-?>
+      <section class="body">
+        <section class="left">
+          <section class="left_head">
+            <img src="img/icones/ic-login.png" alt="">
+            <p>Login:</p>
+          </section>
+          <section class="left_body">
+            <div class="setting">
+              <a href="#">
+                <small>liste des questions</small>
+                <img src="img/icones/ic-liste.png" alt="list">
+              </a>
+            </div>
+            <div class="setting">
+              <a href="<?php echo WEB_ROOT."?controller=user&action=creer_admin_ou_joueur" ;?>">
+                <small>Creer un admin</small>
+                <img src="img/icones/ic-ajout.png" alt="plus">
+              </a>
+            </div>
+            <div class="setting">
+              <a href="<?php echo WEB_ROOT."?controller=user&action=liste.joueur" ;?>">
+                <small>liste des joueurs</small>
+                <img src="img/icones/ic-liste.png" alt="list">
+              </a>
+            </div>
+            <div class="setting">
+              <a href="#">
+                <small>creer une question</small>
+                <img src="img/icones/ic-ajout.png" alt="plus">
+              </a>
+            </div>
+          </section>
+        </section>
+        <section class="right">
+          <?php 
+            echo $content_for_views;   
+          ?>
+        </section>
+      </section>
+    </section>
 </body>
 </html>
-
-
-
-<?php 
-// if(isset( $_SESSION[KEY_USER_CONNECT])){
-//     var_dump( $_SESSION[KEY_USER_CONNECT]);
-// }
-?>

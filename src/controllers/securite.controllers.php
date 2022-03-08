@@ -43,12 +43,13 @@ function connexion(string $login,string $password):void {
     }
     champ_obligatoire("errorPassword",$password,$errors);
     
+    // count c'est pour determiner la taille du tableau
     if(count($errors)==0){
         $userConnect=find_user_login_password($login,$password);
         if(count($userConnect)!=0){
             $_SESSION[KEY_USER_CONNECT]=$userConnect;
-            // header("location:".WEB_ROOT."?controller=user&action=accueil");
-            require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."accueil.html.php");
+             header("location:".WEB_ROOT."?controller=user&action=accueil");
+            // require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."accueil.html.php");
             exit();
         }else{
             $errors['errorConnexion']="Login ou Mot de passe incorrect";
@@ -69,4 +70,5 @@ function logout():void{
     session_destroy();
     header("location:".WEB_ROOT);
     exit();
+    
 }

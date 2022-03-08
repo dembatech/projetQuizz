@@ -62,7 +62,7 @@
 
                 <div class="connexion">
                     <input type="submit" value="Connexion">
-                    <a href="#">S'inscrire pour jouer</a>
+                    <a href="">S'inscrire pour jouer</a>
                 </div>
             </div>
         </form>

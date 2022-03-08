@@ -27,3 +27,5 @@ define("PATH_POST","http://localhost:8080");
 define("KEY_ERRORS", "errors");
 // clé de l'utilisateur connecté
 define("KEY_USER_CONNECT", "user_connect");
+define("ROLE_JOUEUR","JOUEUR");
+define("ROLE_ADMIN","ADMIN");
