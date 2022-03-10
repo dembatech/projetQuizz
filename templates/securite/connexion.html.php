@@ -15,11 +15,11 @@
         <h1>Le plaisir de jouer</h1>
     </header>
     <?php
-    if(isset($_SESSION[KEY_ERRORS])){
-        $tableauErrors=$_SESSION[KEY_ERRORS];
-        // var_dump($_SESSION[KEY_ERRORS]);die;
-        unset($_SESSION[KEY_ERRORS]);
-    }
+        if(isset($_SESSION[KEY_ERRORS])){
+            $tableauErrors=$_SESSION[KEY_ERRORS];
+            // var_dump($_SESSION[KEY_ERRORS]);die;
+            unset($_SESSION[KEY_ERRORS]);
+        }
     ?>
     <div class="container">
         <form action="" method="POST">
@@ -37,7 +37,7 @@
                     ?>
                 </small>
                 <div class="champs">
-                    <input type="text" name="login" placeholder="login">
+                    <input type="text" name="login" placeholder="login" value="<?php if(isset($_SESSION["login"])) echo $_SESSION["login"]; ?>" >
                     <img src="img/icones/ic-login.png" alt="">
                 </div>
                 <small>
@@ -46,6 +46,7 @@
                             echo $tableauErrors["errorLogin"];
                     ?>
                 </small>
+                
 
 
                 <div class="champs">
@@ -60,9 +61,9 @@
                     ?>
                 </small>
 
-                <div class="connexion">
+                <div class="connexion"> 
                     <input type="submit" value="Connexion">
-                    <a href="">S'inscrire pour jouer</a>
+                    <a href="<?php echo WEB_ROOT."?controller=user&action=creer_joueur" ; ?>">S'inscrire pour jouer</a>
                 </div>
             </div>
         </form>

@@ -30,6 +30,12 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             $password=$_POST['password'];
             connexion($login,$password);
         }
+        elseif($_POST['action'] == "inscription"){
+            extract($_POST);
+            $score=0;
+            $avatar=$_FILES;
+            inscription($role,$prenom,$nom,$avatar,$score,$login,$password,$password2);
+        }
         else
             echo"error 404 ";
     }
@@ -37,6 +43,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
 function connexion(string $login,string $password):void {
     $errors=[];
+    $_SESSION["login"]=$login;
     champ_obligatoire("errorLogin",$login,$errors);
     if(!isset($errors['errorLogin'])){
         valid_email("errorLogin",$login,$errors);
@@ -47,6 +54,7 @@ function connexion(string $login,string $password):void {
     if(count($errors)==0){
         $userConnect=find_user_login_password($login,$password);
         if(count($userConnect)!=0){
+            unset($_SESSION["login"]);
             $_SESSION[KEY_USER_CONNECT]=$userConnect;
              header("location:".WEB_ROOT."?controller=user&action=accueil");
             // require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."accueil.html.php");
@@ -71,4 +79,52 @@ function logout():void{
     header("location:".WEB_ROOT);
     exit();
     
+}
+
+function inscription($role,$prenom,$nom,$avatar,$score,$login,$password,$password2){
+    $errors=[];
+    $_SESSION["login2"]=$login;
+    $_SESSION["nom"]=$nom;
+    $_SESSION["prenom"]=$prenom;
+
+
+    //$_SESSION["inscription"]=$login;
+    champ_obligatoire("error_login",$login,$errors);
+    if(!isset($errors['error_login'])){
+        valid_email("error_login",$login,$errors);
+        exist_mail("error_login",$login,$errors);
+    }
+    champ_obligatoire("error_nom",$nom,$errors);
+    if(!isset($errors['error_nom'])){
+        valid_name("error_nom",$nom,$errors);
+    }
+    champ_obligatoire("error_prenom",$prenom,$errors);
+    if(!isset($errors['error_prenom'])){
+        valid_name("error_prenom",$prenom,$errors);
+    }
+
+    champ_obligatoire("error_password",$password,$errors);
+    if(!isset($errors['error_password'])){
+        valid_password("error_password",$password,$errors);
+    }
+
+    champ_obligatoire("error_password2",$password2,$errors);
+    if(!isset($errors['error_password2'])){
+        confirm_password("error_password2",$password,$password2,$errors);
+    }
+
+    $extension=pathinfo($avatar["avatar"]["full_path"],PATHINFO_EXTENSION);
+    valid_extension( "fichier_invalide",$extension,$errors);
+
+    if(count($errors)==0){
+    
+    }
+    else{
+        $_SESSION[KEY_ERRORS]=$errors;
+        if(is_admin()){
+            header("location:".WEB_ROOT."?controller=user&action=creer_admin");
+        }
+        else
+            header("location:".WEB_ROOT."?controller=user&action=creer_joueur");
+    }   
 }

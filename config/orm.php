@@ -5,7 +5,7 @@ function find_data(string $key):array{
     $data=json_decode($dataJson,true);
     return $data[$key];
 }
-//Enregistrement et Mis a jour des donnees du fichier
-function save_data(string $key,array $data):array{
+//Enregistrement et Mise a jour des donnees du fichier
+function save_data(string $key,array $array):array{
     return [];
 }

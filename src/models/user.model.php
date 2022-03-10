@@ -18,5 +18,17 @@ function find_players(string $role):array{
         }
     }
     return $tab_players;
+}
 
+function exist_mail(string $key,string $login,array &$errors,string $message="Email déja utilisé"){
+    $trouve=false;
+    $found_user=find_data("users");
+    foreach ($found_user as $utilisateur) {
+       if($utilisateur["login"]==$login){
+           $trouve=true;
+       }
+    }
+    if($trouve==true){
+        $errors[$key]=$message;
+    }
 }

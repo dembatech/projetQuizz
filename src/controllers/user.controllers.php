@@ -12,10 +12,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 if($_SERVER["REQUEST_METHOD"]=="GET"){
     if(isset($_REQUEST['action'])){
-        if(!is_connect()){
-            header("location:".WEB_ROOT);
-            exit();
-        }
+        // if(!is_connect()){
+        //     header("location:".WEB_ROOT);
+        //     exit();
+        // }
         if($_REQUEST['action']=="accueil"){
             if(is_admin()){
                 lister_joueur();
@@ -27,8 +27,11 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
         elseif($_REQUEST['action']=="liste.joueur"){
             lister_joueur(); 
         } 
-        elseif($_REQUEST['action']=="creer_admin_ou_joueur"){
-            creer_admin_ou_joueur();
+        elseif($_REQUEST['action']=="creer_admin"){
+            creer_admin();
+        }
+        elseif($_REQUEST['action']=="creer_joueur"){
+            creer_joueur();
         }
         else{
             echo "ERREUR 404 NOT FOUND !";
@@ -59,14 +62,22 @@ function jeu() {
     require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."accueil_joueur.html.php");
 }
 
-function creer_admin_ou_joueur(){
+function creer_admin(){
     ob_start();
-    require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."creer_admin_ou_joueur.html.php");
+        require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."creer_admin_ou_joueur.html.php");
     $content_for_views=ob_get_clean();
     require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."accueil.html.php");
-
-
 }
+
+function creer_joueur(){
+    ob_start();
+        require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."creer_admin_ou_joueur.html.php");
+    $content_for_views=ob_get_clean();
+    require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."accueil_joueur.html.php");
+}
+
+
+
 
 
 

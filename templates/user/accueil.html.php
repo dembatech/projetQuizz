@@ -30,7 +30,7 @@
               </a>
             </div>
             <div class="setting">
-              <a href="<?php echo WEB_ROOT."?controller=user&action=creer_admin_ou_joueur" ;?>">
+              <a href="<?php echo WEB_ROOT."?controller=user&action=creer_admin" ;?>">
                 <small>Creer un admin</small>
                 <img src="img/icones/ic-ajout.png" alt="plus">
               </a>
