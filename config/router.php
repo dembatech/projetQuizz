@@ -8,7 +8,7 @@ if(isset($_REQUEST['controller']) ){
             require_once(PATH_SRC."controllers/user.controllers.php");
         break;
         default:
-            echo"error 404";
+            require_once(PATH_VIEWS."securite/error404.html.php");
         break;
     }
 }else{

@@ -17,3 +17,4 @@ require_once dirname(dirname(__FILE__))."/config/router.php";
 // var_dump($_SERVER['REQUEST_METHOD']);die();
 //pour la premiere fois requete GET lagn ame
 //  var_dump(find_players("JOUEUR"));
+// var_dump(explode("@","dembaoumarly@gmail.com")); die();

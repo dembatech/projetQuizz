@@ -18,13 +18,18 @@
 
         <section class="loginForm">
             <h3>s'inscrire</h3>
-            <?php if(is_admin ()): ?>
+            <?php if(!is_admin ()): ?>
                 <p>S'inscrire pour proposer des Quizz</p>
             <?php else: ?> 
                 <p>Pour tester votre culture generale</p>
             <?php endif ?>      
         </section>
-
+        <?php if(isset( $_SESSION["succes_compte"])) 
+                echo  $_SESSION["succes_compte"];
+        ?>
+        <?php if(isset( $_SESSION["erreur_compte"])) 
+                echo  $_SESSION["erreur_compte"];
+        ?>
         <div id="prenom">
             <small>
                 <?php
@@ -83,16 +88,23 @@
                     if (isset($tableauErrors["fichier_invalide"]))
                         echo $tableauErrors["fichier_invalide"];
                 ?>
-           </small>
+        </small>
         <div class="button">  
             <label for="avatar" ><h2><img src="" alt="avatar" id="output"></h2></label>
             <input type="file" name="avatar" id="avatar">
             <label for="avatar" class="avatar">Choisir une image</label>
         </div>
-       
+    
         <div class="button">
             <input type="submit" name="inscription" value="S'inscrire"> 
         </div>
+        <?php if(!is_admin ()): ?>
+            <a href="<?php echo WEB_ROOT."?controller=securite&action=connexion"  ;?>">
+             Veuillez cliquer ici si vous disposez d'un compte
+            </a>
+        <?php endif ?> 
+
+    
     </form>
     <div class="the_avatar">
         <label for="avatar" > <img src="img/photo_2022-03-03_15-50-10.png" alt="avatar"></label>

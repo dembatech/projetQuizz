@@ -6,6 +6,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         if($_REQUEST['action']=="connexion"){
             echo "Traiter le formulaire de connexion";
         }
+        else{
+            require_once(PATH_VIEWS."securite".DIRECTORY_SEPARATOR."error404.html.php");
+        }
     }
 }
 
@@ -25,16 +28,27 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
             }
         }
         elseif($_REQUEST['action']=="liste.joueur"){
-            lister_joueur(); 
+            if(is_admin()){
+                lister_joueur();
+            } 
+            elseif (is_joueur()) {
+                jeu() ;
+            }
         } 
         elseif($_REQUEST['action']=="creer_admin"){
-            creer_admin();
+            if(is_admin()){
+                creer_admin();
+            } 
+            elseif (is_joueur()) {
+                jeu() ;
+            }
         }
         elseif($_REQUEST['action']=="creer_joueur"){
             creer_joueur();
         }
         else{
-            echo "ERREUR 404 NOT FOUND !";
+            require_once(PATH_VIEWS."securite".DIRECTORY_SEPARATOR."error404.html.php");
+        
         }
     }
 
@@ -75,6 +89,8 @@ function creer_joueur(){
     $content_for_views=ob_get_clean();
     require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."accueil_joueur.html.php");
 }
+
+
 
 
 

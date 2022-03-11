@@ -6,7 +6,9 @@
 </head>
 <body>
     <header>
-        <img src="img/photo_2022-03-03_15-50-10.png" alt="">
+        <a href="<?php echo WEB_ROOT."?controller=user&action=liste.joueur" ;?>">
+          <img src="img/photo_2022-03-03_15-50-10.png" alt="">
+        </a>
         <h1>Le plaisir de jouer</h1>
     </header>
 
@@ -30,7 +32,7 @@
               </a>
             </div>
             <div class="setting">
-              <a href="<?php echo WEB_ROOT."?controller=user&action=creer_admin" ;?>">
+              <a href="<?php echo WEB_ROOT."?controller=user&action=creer_admin"  ;?>">
                 <small>Creer un admin</small>
                 <img src="img/icones/ic-ajout.png" alt="plus">
               </a>

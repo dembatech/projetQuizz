@@ -11,7 +11,9 @@
 </head>
 <body>
     <header>
-        <img src="img/photo_2022-03-03_15-50-10.png" alt="">
+        <a href="<?php echo WEB_ROOT."?controller=securite&action=connexion"  ;?>">
+            <img src="img/photo_2022-03-03_15-50-10.png" alt="">
+        </a>
         <h1>Le plaisir de jouer</h1>
     </header>
     <?php

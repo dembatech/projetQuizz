@@ -6,13 +6,15 @@
 </head>
 <body>
     <header>
-        <img src="img/photo_2022-03-03_15-50-10.png" alt="">
+       <a href="#">
+          <img src="img/photo_2022-03-03_15-50-10.png" alt="">
+       </a>
         <h1>Le plaisir de jouer</h1>
-    </header>
-
+    </header>   
+          
     <section class="container">
           <?php 
-            echo $content_for_views;   
+            echo $content_for_views;
           ?>
         </section>
     </body>
